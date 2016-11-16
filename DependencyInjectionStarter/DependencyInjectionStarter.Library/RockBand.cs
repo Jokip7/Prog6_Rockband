@@ -8,6 +8,7 @@ namespace DependencyInjectionStarter.Library
 {
     public class RockBand
     {
+        private List<IInstrument> instruments;
         private Guitar guitar = new Guitar();
         private BassGuitar bassGuitar = new BassGuitar();
         private Drums drums = new Drums();
@@ -15,7 +16,7 @@ namespace DependencyInjectionStarter.Library
 
         public void DoSoundCheck()
         {
-            Console.WriteLine(guitar.PlayRiff());
+            Console.WriteLine(guitar.Play());
             Console.WriteLine(bassGuitar.PlayBassLine());
             Console.WriteLine(drums.Drum());
             Console.WriteLine(vocal.Sing());
