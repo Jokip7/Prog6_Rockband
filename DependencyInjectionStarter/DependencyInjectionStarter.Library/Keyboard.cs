@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace DependencyInjectionStarter.Library
 {
-    public interface IInstrument
+    public class Keyboard : IInstrument
     {
-        string Play();
+        public string Play()
+        {
+            return "If I shall exist eternally, how shall I exist tomorrow?";
+        }
     }
 }

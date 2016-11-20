@@ -14,12 +14,30 @@ namespace DependencyInjectionStarter.Library
         private Drums drums = new Drums();
         private Vocal vocal = new Vocal();
 
+        public RockBand()
+        {
+            instruments.Add(new Guitar());
+            instruments.Add(new BassGuitar());
+            instruments.Add(new Drums());
+            instruments.Add(new Vocal());
+        }
+
+        public RockBand(List<IInstrument> instrumentsList)
+        {
+            instruments = instrumentsList;
+        }
+
         public void DoSoundCheck()
         {
-            Console.WriteLine(guitar.Play());
-            Console.WriteLine(bassGuitar.PlayBassLine());
-            Console.WriteLine(drums.Drum());
-            Console.WriteLine(vocal.Sing());
+            Console.WriteLine("=~=~=~ Sound Check ~=~=~=");
+            Console.WriteLine("");
+            foreach (var instrument in instruments)
+            {
+                Console.WriteLine(instrument.Play());
+            }
+            Console.WriteLine("");
+            Console.WriteLine("=~=~=~=~=~= * =~=~=~=~=~=");
+            Console.WriteLine("");
         }
     }
 }
